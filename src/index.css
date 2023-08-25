@@ -1,3 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +14,106 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.li_style {
+  @apply capitalize text-xl font-bold text-neutral-900 list-none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.linkStyle {
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.Btn {
+  @apply py-4 px-[2rem] capitalize font-sans font-bold text-xl border-[2px] rounded-lg border-gray-400
+}
+
+.section1_pBold {
+  @apply p-[1rem] text-neutral-900 font-bold capitalize text-5xl
+}
+
+.input-field:focus+.input-label {
+  transform: translateY(-195%);
+  
+}
+.input-field:focus+.input-label2 {
+  transform: translateY(-195%);
+  
+}
+.input-field3:focus+.input-label3 {
+  transform: translateY(-195%);
+  
+}
+.input-field4:focus+.input-label4 {
+  transform: translateY(-195%);
+  
+}
+
+.input-label {
+  position: absolute;
+  top: 17%;
+  right: 46rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.5s ease-in-out;
+
+}
+.input-label3 {
+  position: absolute;
+  top: 30%;
+  right:42.5rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.5s ease-in-out;
+
+}
+.input-label4 {
+  position: absolute;
+  top: 42%;
+  right: 48.5rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.5s ease-in-out;
+
+}
+
+.input-label2{
+  position: absolute;
+    top: 17%;
+    right: 21rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+.Password-field:focus+.Password-label {
+  transform: translateY(-195%);
+
+
+}
+.Password-label {
+  position: absolute;
+  top: 12.5%;
+  right: 27.5rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.5s ease-in-out;
+
+}
+.confirmPSW-field:focus+.confirmPSW-label {
+  transform: translateY(-195%);
+
+
+}
+
+.confirmPSW-label {
+  position: absolute;
+  top: 33.5%;
+  right: 26.5rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.5s ease-in-out;
+
 }
