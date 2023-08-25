@@ -29,7 +29,7 @@ function App() {
   return (
     <AllContext.Provider value={state}>
       <div className='App '>
-        <Profi/>
+        <Profile/>
         {/* <Routes>
           <Route path='/' exact element={<Landing_page />} />
           <Route path='/dashboard' element={<DashB />}></Route>
