@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 import { FaAngleLeft } from "react-icons/fa";
 
-const AccountPasswordUpdate = () => {
+const ZigPinReset = () => {
   return (
     <div className='flex  w-full justify-start items-center'>
       <div className='relative top-[-14rem] left-[5rem] flex items-center justify-between '>
@@ -10,41 +10,57 @@ const AccountPasswordUpdate = () => {
       </div>
       <div className='w-[45vw] h-[36rem] bg-white p-4 m-auto mt-10  '>
         <h1 className='text-3xl text-left text-blue-950 font-bold mb-2'>
-          Update Password
+          Update pin
         </h1>
         <p className='text-gray-600 text-xl text-left mb-[4rem] '>
-          Change your old password to a new one.
+          Change or reset your ziga pin .
         </p>
         <form className='mt-4 w-full '>
           <div className='mt-[4rem] text-gray-600 text-xl text-left'>
-            <label htmlFor='oldPassword' className=' my-3 block text-gray-600'>
-              Old Password
+            <label
+              htmlFor='oldpin'
+              className=' capitalize my-3 block text-gray-600'>
+              Old ziga pin
             </label>
             <input
-              type='password'
-              id='oldPassword'
+              type='pin'
+              id='oldpin'
               className=' h-[3rem] w-full border border-gray-100 p-[33.5px] rounded-md'
             />
           </div>
           <div className='mt-[4rem] text-gray-600 text-xl text-left'>
-            <label htmlFor='newPassword' className=' my-3 block text-gray-600'>
-              New Password
+            <label
+              htmlFor='newpin'
+              className=' capitalize my-3 block text-gray-600'>
+              New ziga pin
             </label>
             <input
-              type='password'
-              id='newPassword'
+              type='pin'
+              id='newpin'
               className='h-[3rem] w-full border border-gray-100 p-[33.5px] rounded-md'
             />
           </div>
 
+          <div className='mt-[4rem] text-gray-600 text-xl text-left'>
+            <label
+              htmlFor='ConfirmPin'
+              className=' capitalize my-3 block text-gray-600'>
+               confirm ziga pin
+            </label>
+            <input
+              type='ComfirmPin'
+              id='newpin'
+              className='h-[3rem] w-full border border-gray-100 p-[33.5px] rounded-md'
+            />
+          </div>
           <button
             type='submit'
             className='bg-blue-950 Btn mt-12 text-white py-2 px-4 rounded-md  w-full mt-4'>
-            Update Password
+            Update pin
           </button>
           <div className='flex items-center justify-center  my-12 '>
             <p className='text-gray-600'>
-              Can't remember password{" "}
+              Can't remember pin{" "}
               <span className='text-xl font-semibold cursor-pointer text-blue-950'>
                 <a href='jsjks'>reset</a>
               </span>
@@ -54,8 +70,6 @@ const AccountPasswordUpdate = () => {
       </div>
     </div>
   );
-};
+}
 
-export default AccountPasswordUpdate;
-
-
+export default ZigPinReset

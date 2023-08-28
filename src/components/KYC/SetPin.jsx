@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const Setpin = () => {
-  const [pins, setPins] = useState(["", "", "", ""]); // Initialize with four empty strings
-  const [confirmPins, setConfirmPins] = useState(["", "", "", ""]); // Initialize with four empty strings
+  const [pins, setPins] = useState(["", "", "", ""]); 
+  const [confirmPins, setConfirmPins] = useState(["", "", "", ""]);
 
   const handlePinChange = (index, value) => {
     const newPins = [...pins];

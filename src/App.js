@@ -3,6 +3,9 @@ import "./App.css";
 import React, { useState } from "react";
 import { DashBoard } from "./components/DashBoard/DashBoard";
 import Profile from "./components/Profile/Profile";
+import AccountPasswordUpdate from "./components/Profile/AccountPasswordUPDt";
+import ZigPinReset from "./components/Profile/ZigPinReset";
+import NotificationCard from "./components/utility Components/NotificationCard";
 
 export const AllContext = React.createContext();
 
@@ -29,7 +32,7 @@ function App() {
   return (
     <AllContext.Provider value={state}>
       <div className='App '>
-        <Profile/>
+        <NotificationCard/>
         {/* <Routes>
           <Route path='/' exact element={<Landing_page />} />
           <Route path='/dashboard' element={<DashB />}></Route>
