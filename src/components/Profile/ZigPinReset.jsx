@@ -1,21 +1,28 @@
 import React from 'react'
 import { FaAngleLeft } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const ZigPinReset = () => {
+    const navigate = useNavigate();
+
   return (
     <div className='flex  w-full justify-start items-center'>
-      <div className='relative top-[-14rem] left-[5rem] flex items-center justify-between '>
+      <div
+        onClick={() => {
+          navigate("/dashboard/security");
+        }}
+        className=' cursor-pointer relative top-[-26rem] left-[5rem] flex items-center justify-between '>
         <FaAngleLeft size={40} />{" "}
         <h2 className='text-blue-950 font-mono text-2xl mx-4 '>Back</h2>
       </div>
-      <div className='w-[45vw] h-[36rem] bg-white p-4 m-auto mt-10  '>
+      <div className='w-[45vw] h-[56rem] bg-white p-4 m-auto mt-10  '>
         <h1 className='text-3xl text-left text-blue-950 font-bold mb-2'>
           Update pin
         </h1>
         <p className='text-gray-600 text-xl text-left mb-[4rem] '>
           Change or reset your ziga pin .
         </p>
-        <form className='mt-4 w-full '>
+        <form className='mt-4 w-full h-fit  '>
           <div className='mt-[4rem] text-gray-600 text-xl text-left'>
             <label
               htmlFor='oldpin'
@@ -45,7 +52,7 @@ const ZigPinReset = () => {
             <label
               htmlFor='ConfirmPin'
               className=' capitalize my-3 block text-gray-600'>
-               confirm ziga pin
+              confirm ziga pin
             </label>
             <input
               type='ComfirmPin'
@@ -55,7 +62,7 @@ const ZigPinReset = () => {
           </div>
           <button
             type='submit'
-            className='bg-blue-950 Btn mt-12 text-white py-2 px-4 rounded-md  w-full mt-4'>
+            className='bg-blue-950 Btn  text-white py-2 px-4 rounded-md  w-full mt-4'>
             Update pin
           </button>
           <div className='flex items-center justify-center  my-12 '>

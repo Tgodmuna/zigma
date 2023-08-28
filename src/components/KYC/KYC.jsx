@@ -1,56 +1,65 @@
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const KYC = () => {
-  // const [isVerified, setIsverified] = useState(false);
-  // const handleISverified = () => {
-  //   setIsverified(!false)
-  // }
-  // const VerifyContext = React.createContext();
-  return (
-    <div className='-ml-[3rem]'>
-      <Link
-        to={"dashboard"}
-        className='flex cursor-pointer items-start justify-start mb-[2rem] mt-[7rem]'>
-        <FaAngleLeft size={40} />
-        <p className='text-2xl text-[rgb(4,16,60)] text-center text-mono capitalize'>
-          back
-        </p>
-      </Link>
-      <Link
-        to={"IdentityVerification"}
-        className='items-start justify-start flex flex-col '>
-        <h1 className='font-bold font-sans text-4xl text-[rgb(4,16,60)]b capitalize '>
-          verify your account
-        </h1>
-        <p className='text-2xl text-slate-400 mt-[10px]'>
-          {" "}
-          once these steps are complete you will be able to submit
-        </p>
-      </Link>
+  const navigate = useNavigate();
 
-      <div className='flex flex-col gap-[4rem] mt-14'>
-        <div className='flex gap-[4rem] '>
-          <Link to={"IdentityVerification"} tabIndex={3}>
-            <KYCCard title='identity Verification' text={"Set Identity"} />
-          </Link>
-          <Link to={"AddressVerification"}>
-            <KYCCard title='address verification' text='verify your address' />
-          </Link>
+  return (
+    <>
+      <div className=' bg-transparent m-auto h-screen'>
+        <div
+          onClick={() => {
+            navigate("/dashboard/main");
+          }}
+          className='flex cursor-pointer items-start justify-start mb-[2rem] mt-[7rem]'>
+          <FaAngleLeft size={40} />
+          <p className='text-2xl text-[rgb(4,16,60)] text-center text-mono capitalize'>
+            back
+          </p>
         </div>
-        <div className='flex gap-[4rem]'>
-          <Link to={"Setpin"}>
-            <KYCCard title='set pin' text='set your transaction pin' />
-          </Link>
-          <Link to={"Businessinfo"}>
-            <KYCCard
-              title='Business information'
-              text='provide business info to increase your limits'
-            />
-          </Link>
+        <div className='items-start justify-start flex flex-col '>
+          <h1 className='font-bold font-sans text-4xl text-[rgb(4,16,60)]b capitalize '>
+            verify your account
+          </h1>
+          <p className='text-2xl text-slate-400 mt-[10px]'>
+            {" "}
+            once these steps are complete you will be able to submit
+          </p>
+        </div>
+
+        <div className='flex flex-col gap-[4rem] mt-14'>
+          <div className='flex gap-[4rem] '>
+            <div
+              onClick={() => {
+                navigate("/dashboard/IDVerification");
+              }}
+              tabIndex={3}>
+              <KYCCard title='identity Verification' text={"Set Identity"} />
+            </div>
+            <div onClick={() => navigate("/dashboard/addressVerification")}>
+              <KYCCard
+                title='address verification'
+                text='verify your address'
+              />
+            </div>
+          </div>
+          <div className='flex gap-[4rem]'>
+            <div
+              onClick={() => {
+                navigate("/dashboard/Setpin");
+              }}>
+              <KYCCard title='set pin' text='set your transaction pin' />
+            </div>
+            <div onClick={() => navigate("/dashboard/Business")}>
+              <KYCCard
+                title='Business information'
+                text='provide business info to increase your limits'
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -71,4 +80,4 @@ const KYCCard = ({ title, text }) => {
     </>
   );
 };
-export default KYC
+export default KYC;

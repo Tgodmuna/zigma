@@ -10,20 +10,20 @@ const Profile = () => {
     setisActiveTab(false);
   };
   return (
-    <div>
-      <div className='flex p-[2rem] h-[50px] border-[2px] border-slate-300 gap-[1rem] mt-[3rem] rounded-xl  w-[40%] justify-start items-center  '>
+    <div className='bg-white z-50  w-[50vw] m  m-auto'>
+      <div className='flex p-[2rem] h-[50px] border-[2px] border-slate-300 gap-[1rem] mt-[4rem] m-auto rounded-xl  w-[50vw] justify-start items-center  '>
         <div
-        //   onLoad={() => handleTAB("account")}
+          //   onLoad={() => handleTAB("account")}
           onClick={() => handleTAB("account")}
           className={`${
-            tab === "account" ? "bg-teal-100" : null
+            tab === "account" ? "bg-slate-100" : null
           } text-xl capitalize font-bold p-[0.45rem] rounded w-full bg-gray-100 border`}>
           account
         </div>
         <div
           onClick={() => handleTAB("security")}
           className={`${
-            tab === "security" ? "bg-teal-100" : null
+            tab === "security" ? "bg-slate-100" : null
           } text-xl capitalize font-bold p-[0.45rem] bg-gray-100 border px-[2rem] w-full  rounded `}>
           security
         </div>

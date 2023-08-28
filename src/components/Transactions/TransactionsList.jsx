@@ -4,13 +4,13 @@ import { SearchInput } from "../DashBoard/DashBoard";
 const TransactionsList = () => {
   const Transactions = [
     {
-      receiver: "Alice",
+      receiver: "Ada",
       date: "2023-08-10",
       status: "completed",
       amount: 150.75,
     },
     {
-      receiver: "Bob",
+      receiver: "Obi",
       date: "2023-08-11",
       status: "pending",
       amount: 50.2,
@@ -22,7 +22,7 @@ const TransactionsList = () => {
       amount: 75.3,
     },
     {
-      receiver: "David",
+      receiver: "Mia",
       date: "2023-08-13",
       status: "completed",
       amount: 120.0,
@@ -58,13 +58,13 @@ const TransactionsList = () => {
       amount: 180.5,
     },
     {
-      receiver: "Jack",
+      receiver: "omotala",
       date: "2023-08-19",
       status: "completed",
       amount: 95.7,
     },
     {
-      receiver: "Kate",
+      receiver: "kemi",
       date: "2023-08-20",
       status: "pending",
       amount: 25.4,
@@ -76,7 +76,7 @@ const TransactionsList = () => {
       amount: 110.6,
     },
     {
-      receiver: "Mia",
+      receiver: "Mya",
       date: "2023-08-22",
       status: "completed",
       amount: 70.9,
@@ -119,7 +119,7 @@ const TransactionsList = () => {
   });
 
   return (
-    <div className="  w-full ">
+    <div className="   h-auto w-auto ">
       <SearchInput Handler={HS} />
       <TransactionTabs setFilterStatus={setFilterStatus} />
       {/* Display the filtered transactions */}
@@ -160,8 +160,8 @@ const TransactionTabs = ({ setFilterStatus }) => {
   };
 
   return (
-    <div className='flex justify-center items-center w-full mt-4'>
-      <div className='flex gap-8 rounded-md w-full border-[2px] items-center justify-center py-[1rem]'>
+    <div className='flex justify-center overflow-hidden items-center w-full'>
+      <div className='flex gap-3 rounded-md w-full border-[2px] items-center justify-center py-[1rem]'>
         <div
           className={`w-[14rem]  px-4 py-2 rounded-tl-md  text-2xl rounded-tr-md cursor-pointer ${
             activeTab === "all"

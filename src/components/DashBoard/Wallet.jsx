@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { DashboardCard,SearchInput } from "./DashBoard";
 const Wallet = () => {
   return (
-    <div>
-      <DashboardCard>
+    <div className="h-screen flex justify flex-col items-center m-auto gap-4 w-full">
+      <DashboardCard >
         <p className='inline font-bold capitalize'>wallet</p>
           </DashboardCard>
           <SearchInput/>

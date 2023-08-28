@@ -34,7 +34,7 @@ code {
   @apply p-[1rem] text-neutral-900 font-bold capitalize text-5xl
 }
 
-.input-field:focus+.input-label {
+/* .input-field:focus+.input-label {
   transform: translateY(-195%);
   
 }
@@ -116,4 +116,4 @@ code {
   pointer-events: none;
   transition: transform 0.5s ease-in-out;
 
-}
+} */

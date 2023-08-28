@@ -34,8 +34,8 @@ const AddressForm = () => {
       <p className='text-2xl text-left text-gray-400 font-sans '>
         verify your address
       </p>
-          <form
-              onSubmit={handleSubmit}
+      <form
+        onSubmit={handleSubmit}
         action=''
         className='flex  flex-col gap-[3rem] items-start justify-start p-[2rem] '>
         <div className=' w-full flex gap-4'>

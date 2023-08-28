@@ -1,0 +1,45 @@
+/* .email-label {
+    position: absolute;
+    top: 20%;
+    right: 51rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+.email-field:focus+.email-label {
+    transform: translateY(-195%);
+}
+
+.password-field:focus+.password-label {
+    transform: translateY(-195%);
+}
+
+.password-label {
+    position: absolute;
+    top: 33%;
+    right: 48rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* @media screen and (max-width:500px) {
+
+    .email-label {
+        position: absolute;
+        top: 27%;
+        right: 19rem;
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: transform 0.5s ease-in-out;
+    }
+        .password-label {
+            position: absolute;
+            top: 42%;
+            right: 17rem;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: transform 0.5s ease-in-out;
+        }
+} */ 
