@@ -20,7 +20,9 @@ const CreatePassword = () => {
   const handlePassword = (e) => {
     const { name, value } = e.target;
     setpassword({ ...password, [name]: value });
+    console.log( password);
   };
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 

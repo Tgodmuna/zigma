@@ -119,15 +119,14 @@ const TransactionsList = () => {
   });
 
   return (
-    <div className="   h-auto w-auto ">
+    <div className='   h-auto md:w-9/12 m-auto '>
       <SearchInput Handler={HS} />
       <TransactionTabs setFilterStatus={setFilterStatus} />
       {/* Display the filtered transactions */}
       {filteredTransactions.map((transaction, index) => (
-        
         <div
           key={index}
-          className='border w-full flex justify-between  p-4 mb-2'>
+          className='border md:w-9/12  flex justify-between  p-4 mb-1 md:mb-2'>
           <div className='flex flex-col items-start justify-start'>
             <p className='font-bold text-[rgb(4,16,83) text-2xl my-3 '>
               {transaction.receiver}
@@ -160,10 +159,10 @@ const TransactionTabs = ({ setFilterStatus }) => {
   };
 
   return (
-    <div className='flex justify-center overflow-hidden items-center w-full'>
+    <div className='flex justify-center  overflow-hidden items-center md:w-9/12'>
       <div className='flex gap-3 rounded-md w-full border-[2px] items-center justify-center py-[1rem]'>
         <div
-          className={`w-[14rem]  px-4 py-2 rounded-tl-md  text-2xl rounded-tr-md cursor-pointer ${
+          className={`md:px-4 px-1 py-2 rounded-tl-md  text-xl md:text-2xl rounded-tr-md cursor-pointer ${
             activeTab === "all"
               ? "bg-sky-100 translate-x-2  duration-[3000] transition-all "
               : ""
@@ -172,7 +171,7 @@ const TransactionTabs = ({ setFilterStatus }) => {
           All
         </div>
         <div
-          className={` w-[14rem] px-4 text-xl capitalize py-2 rounded-t-md rounded-b-md cursor-pointer ${
+          className={` px-4 md:text-xl capitalize py-2 rounded-t-md rounded-b-md cursor-pointer ${
             activeTab === "pending"
               ? "bg-sky-100 translate-x-2  duration-[4000] transition-all "
               : ""
@@ -181,7 +180,7 @@ const TransactionTabs = ({ setFilterStatus }) => {
           Pending
         </div>
         <div
-          className={`px-4 py-2 rounded-tr-md text-xl capitalize rounded-bl-md cursor-pointer ${
+          className={`px-4 py-2 rounded-tr-md md:text-xl capitalize rounded-bl-md cursor-pointer ${
             activeTab === "failed"
               ? "bg-sky-100 translate-x-2  duration-[3000] transition-all "
               : ""
@@ -190,7 +189,7 @@ const TransactionTabs = ({ setFilterStatus }) => {
           Failed
         </div>
         <div
-          className={`px-4 py-2 rounded-tr-md text-xl capitalize rounded-bl-md cursor-pointer ${
+          className={`px-4 py-2 rounded-tr-md md:text-xl capitalize rounded-bl-md cursor-pointer ${
             activeTab === "completed"
               ? "bg-sky-100 translate-x-2  duration-[3000] transition-all "
               : ""

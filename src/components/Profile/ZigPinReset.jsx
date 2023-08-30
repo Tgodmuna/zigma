@@ -6,7 +6,7 @@ const ZigPinReset = () => {
     const navigate = useNavigate();
 
   return (
-    <div className='flex  w-full justify-start items-center'>
+    <div className='flex md:flex-row flex-col  md:w-full md:justify-start justify-center items-center'>
       <div
         onClick={() => {
           navigate("/dashboard/security");
@@ -15,11 +15,11 @@ const ZigPinReset = () => {
         <FaAngleLeft size={40} />{" "}
         <h2 className='text-blue-950 font-mono text-2xl mx-4 '>Back</h2>
       </div>
-      <div className='w-[45vw] h-[56rem] bg-white p-4 m-auto mt-10  '>
-        <h1 className='text-3xl text-left text-blue-950 font-bold mb-2'>
+      <div className='md:w-[45vw] md:h-[56rem] h-[90vw] w-[100vw] bg-white p-4 m-auto mt-10  '>
+        <h1 className='text-3xl text-center md:text-left text-blue-950 font-bold mb-2'>
           Update pin
         </h1>
-        <p className='text-gray-600 text-xl text-left mb-[4rem] '>
+        <p className='text-gray-600 text-xl text-center md:text-left mb-[4rem] '>
           Change or reset your ziga pin .
         </p>
         <form className='mt-4 w-full h-fit  '>
@@ -61,6 +61,7 @@ const ZigPinReset = () => {
             />
           </div>
           <button
+            onClick={()=>alert('pin reset successfully')}
             type='submit'
             className='bg-blue-950 Btn  text-white py-2 px-4 rounded-md  w-full mt-4'>
             Update pin

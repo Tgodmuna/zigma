@@ -19,7 +19,7 @@ const Account = () => {
             />
             <p className='font-mono font-bold text-4xl uppercase'>Thankgod</p>
           </div>
-          <div className=' m-auto flex flex-row gap-[4rem] p-8  w-[40%]'>
+          <div className=' m-auto flex md:flex-row gap-[4rem] p-8  flex-col w-full md:w-[40%]'>
             <div className='mb-4 w-full justify-center flex flex-col gap-6'>
               <label className='font-light text-xl text-left text-slate-400'>
                 Firstname{" "}
@@ -31,18 +31,18 @@ const Account = () => {
               />
             </div>
 
-            <div className='mb-4 w-full justify-center items-center flex flex-col gap-6'>
+            <div className='mb-4 w-full justify-center md:items-center flex flex-col gap-6'>
               <label className='font-light text-xl text-left text-slate-400'>
                 lastname{" "}
               </label>
               <input
                 className='border p-[1.5rem] w-full rounded-md'
                 type='tel'
-                placeholder='Phone Number'
+                placeholder='last name'
               />
             </div>
           </div>
-          <div className=' m-auto flex flex-col gap-[4rem] p-8  w-[40%]'>
+          <div className=' m-auto flex flex-col gap-[4rem] p-8 w-full  md:w-[40%]'>
             <div className='mb-4 w-full justify-start flex flex-col gap-6'>
               <label className='font-light text-xl text-left text-slate-400'>
                 Phone Number
@@ -60,10 +60,10 @@ const Account = () => {
               <input
                 className='border p-[1.5rem] w-full rounded-md'
                 type='email'
-                placeholder='Email Address'
+              placeholder='Email Address'
               />
             </div>
-            <button  className='bg-blue-950 Btn text-white py-2 px-4 rounded-md'>
+            <button className='bg-blue-950 Btn text-white py-2 px-4 rounded-md'>
               save
             </button>
           </div>

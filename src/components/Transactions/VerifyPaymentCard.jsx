@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 
-const TransactionCard = ({ username, accountName, accountNumber, onClose }) => {
+const VerifyPaymentCard = ({ username, accountName, accountNumber, onClose }) => {
   return (
     <div className='fixed  top-0 left-[0rem] flex items-center justify-center w-full h-full bg-opacity-75 bg-gray-900'>
       <div className='w-[50vw] md:w-[vw] bg-white p-8 rounded-lg shadow-lg'>
@@ -30,4 +30,4 @@ const TransactionCard = ({ username, accountName, accountNumber, onClose }) => {
   );
 };
 
-export default TransactionCard;
+export default VerifyPaymentCard;

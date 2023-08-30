@@ -3,15 +3,16 @@ import Account from "./Account";
 import { Security } from "./Security";
 
 const Profile = () => {
-  const [tab, settab] = useState("active");
+  const [tab, settab] = useState("account");
   const [isActiveTab, setisActiveTab] = useState(true);
+
   const handleTAB = (tabName) => {
     settab(tabName);
     setisActiveTab(false);
   };
   return (
-    <div className='bg-white z-50  w-[50vw] m  m-auto'>
-      <div className='flex p-[2rem] h-[50px] border-[2px] border-slate-300 gap-[1rem] mt-[4rem] m-auto rounded-xl  w-[50vw] justify-start items-center  '>
+    <div className='bg-white z-30 w-full  md:w-[50vw]   m-auto'>
+      <div className='flex md:p-[2rem] h-[50px] border-[2px] border-slate-300 gap-[1rem] mt-[4rem] m-auto rounded-xl  md:w-[50vw] justify-start items-center  '>
         <div
           //   onLoad={() => handleTAB("account")}
           onClick={() => handleTAB("account")}
@@ -29,7 +30,7 @@ const Profile = () => {
         </div>
       </div>
 
-      {isActiveTab === !true && tab === "account" ? (
+      {(isActiveTab !== true && tab === "account") ? (
         <>
           <Account />
         </>

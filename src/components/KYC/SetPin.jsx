@@ -30,10 +30,10 @@ const Setpin = () => {
   );
 
   return (
-    <div className='pin-form mt-[15rem] flex flex-col justify-center items-center w-[100vw] h-screen  '>
+    <div className='pin-form mt-[15rem] flex flex-col justify-center items-center  md:w-[100vw] h-screen  '>
       <form className='flex flex-col pin-input-container m-auto mt-10'>
         <div>
-          <header className='text-2xl capitalize font-semibold mb-4 text-left '>
+          <header className='text-2xl capitalize font-semibold mb-4 text-center md:text-left '>
             set PIN
           </header>
 
@@ -42,7 +42,7 @@ const Setpin = () => {
               key={index}
               type='password'
               id={`pin${index}`}
-              className='pin-input border-[3px] text-center border-neutral-950 rounded-xl w-[5rem] h-[3rem]  text-2xl mx-[2rem] '
+              className='pin-input border-[3px] text-cente1r border-neutral-950 rounded-xl w-[5rem] h-[3rem]  text-2xl mx-[2rem] '
               maxLength='1'
               value={pin}
               onChange={(e) => handlePinChange(index, e.target.value)}
@@ -51,11 +51,11 @@ const Setpin = () => {
           ))}
         </div>
 
-        <div className='text-2xl font-semibold mt-[5rem] text-left mb-4'>
+        <div className='text-2xl font-semibold mt-[5rem] text-center md:text-left mb-4'>
           Confirm Your PIN:
         </div>
 
-        <div className='flex'>
+        <div className='flex w-[rem] ' >
           {confirmPins.map((confirmPin, index) => (
             <input
               key={index}

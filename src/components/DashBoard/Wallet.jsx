@@ -1,12 +1,18 @@
-import React, { useState } from "react";
-import { DashboardCard,SearchInput } from "./DashBoard";
+import React from "react";
+import { DashboardCard } from "./DashBoard";
+import { TransactionsList } from "../Transactions/TransactionsList";
 const Wallet = () => {
   return (
-    <div className="h-screen flex justify flex-col items-center m-auto gap-4 w-full">
-      <DashboardCard >
-        <p className='inline font-bold capitalize'>wallet</p>
-          </DashboardCard>
-          <SearchInput/>
+    <div className='h-screen wallet w-full'>
+      <div className="relative md:left-[35.9rem]">
+        <DashboardCard>
+          <p className='inline font-bold capitalize'>wallet</p>
+        </DashboardCard>
+      </div>
+
+      <div className="w-full relative md:left-[20rem] ">
+        <TransactionsList />
+      </div>
     </div>
   );
 };

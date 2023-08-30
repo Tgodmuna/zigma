@@ -10,15 +10,14 @@ import Wallet from "./components/DashBoard/Wallet";
 import KYC from "./components/KYC/KYC";
 import AddressForm from "./components/KYC/AddressVerification";
 import BusinessInfo from "./components/KYC/BusinessInfo";
-import Setpin from "./components/KYC/SetPin";
 import CreatePassword from "./components/Logins/CreatePassword";
 import IdentityVerification from "./components/KYC/IdentityVerification";
-import Account from "./components/Profile/Account";
 import Profile from "./components/Profile/Profile";
-import {Security} from "./components/Profile/Security";
 import ZigPinReset from "./components/Profile/ZigPinReset";
 import AccountPasswordUpdate from "./components/Profile/AccountPasswordUPDt";
 import Exchange from "./components/Exchange/Exchange";
+import { Security } from "./components/Profile/Security";
+import Setpin from "./components/KYC/SetPin";
 export const AllContext = React.createContext();
 
 function App() {
@@ -56,14 +55,13 @@ function App() {
                         <Route path='addressVerification' element={<AddressForm />}/>
                         <Route path='business' element={<BusinessInfo />}/>
                         <Route path='IDVerification' element={<IdentityVerification />}/>
-                        <Route path='setPIN' element={<ZigPinReset />}/> {/* Profile route */}
+                        <Route path='setPIN' element={<Setpin/>}/> 
                         <Route path='profile' element={<Profile />}/>
-                        <Route path='security' element={<sec />}/>
+                        <Route path='security' element={<Security />}/>
 
                         <Route path='pinReset' element={<ZigPinReset />}/>
                         <Route path='passwordUPDATE' element={<AccountPasswordUpdate />}/>
                     </Route>
-
                     {/* Login route */}
                     <Route path='/login' element={<LoginForm />}/> {/* Signup route */}
                     <Route path='/signup' element={<SignUP />}/>

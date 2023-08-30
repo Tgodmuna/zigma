@@ -8,12 +8,13 @@ import {
   FaSearch,
   FaCalendar,
   FaBell,
+  FaBars,
 } from "react-icons/fa";
 
 import { AiOutlineMoneyCollect } from "react-icons/ai";
 import KYC_requestCard from "../KYC/KYC_requestCard";
 import { TransactionsList } from "../Transactions/TransactionsList";
-import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import NotificationCard from "../utility Components/NotificationCard";
 
 //the dashboard himself
@@ -60,7 +61,7 @@ const MenuList = ({ icons, outletHandler }) => {
   };
 
   return (
-    <div className=' bg-gray-200  fixed -top-[0vw] flex flex-col h-full w-[17vw] gap-[2rem] '>
+    <div className=' hidden  bg-gray-200  fixed -top-[0vw] md:flex flex-col md:h-full w-[17vw] gap-[2rem] '>
       <p className=' text-6xl text-center font-bold relative  -top-[0rem]  '>
         ziga
       </p>{" "}
@@ -118,9 +119,9 @@ const MenuList = ({ icons, outletHandler }) => {
   );
 };
 
-//nav bar
 
-const Navbar = () => {
+//nav bar
+const Navbar = ({ outletHandler }) => {
   const [showBell, setshowBell] = useState(false);
   const handleShowBell = () => {
     setshowBell(true);
@@ -129,30 +130,50 @@ const Navbar = () => {
     setshowBell(false);
     console.log(`show bell is off and the state is ${showBell} `);
   };
-  const [showTitle, setshowTitle] = useState(['title-1','title-2','title-3']);
-  const titles = ['dashboard', 'wallet', 'exchange'];
-  const handleTitle = (titlename) => {
-    setshowTitle(titlename);
-  }
+  // const [showTitle, setshowTitle] = useState(['title-1','title-2','title-3']);
+  // const titles = ['dashboard', 'wallet', 'exchange'];
+  // const handleTitle = (titlename) => {
+  //   setshowTitle(titlename);
+  // }
   const Navigate = useNavigate();
   return (
-    <div className='flex  static bg-gray-200 w-full  h-[10rem]'>
+    <div className='flex w-screen my-0 mx-[0rem]  static bg-gray-200 h-[4rem] md:w-full  md:h-[8rem]'>
       <div className='flex justify-between items-center w-screen flex-grow px-4'>
-        <h1 className='text-2xl capitalize text-gray-800 relative left-[56rem] '>
+        <h1 className='text-2xl md:inline hidden capitalize text-gray-800 relative left-[56rem] '>
           Dashboard
         </h1>
+        <div className='md:hidden flex justify-between w-[50vw] '>
+          <FaBars size={20} onClick={outletHandler} />
+          <h1 className='text-sm  md:hidden inline uppercase font-bold text-gray-500'>
+            dashboard
+          </h1>
+        </div>
+
         <div className='flex justify-center items-center space-x-[23px]'>
           <FaBell
-            className='cursor-pointer'
+            className='cursor-pointer md:block hidden '
             size={40}
             onClick={handleShowBell}
           />
-          <div className='w-10 h-10 text-center p-2 bg-white rounded-full'>
+          {/* mobile notificationBell */}
+          <FaBell
+            className='cursor-pointer md:hidden block '
+            size={20}
+            onClick={handleShowBell}
+            color='gray'
+          />
+          <div className='w-10 h-10 text-center hidden md:block p-2 bg-white rounded-full'>
+            <p className='text-xs text-blue-900  object-contain '>photo</p>
+          </div>
+
+          <div
+            className='w-10 md:hidden h-10 text-center p-2 bg-white rounded-full'
+            onClick={ () => { Navigate("/profile"); outletHandler()}}>
             <p className='text-xs text-blue-900  object-contain '>photo</p>
           </div>
           <p
-            onClick={() => Navigate("/dashboard/profile")}
-            className=' text-xl cursor-pointer text-gray-700'>
+            onClick={ () => { Navigate("/dashboard/profile");outletHandler() } }
+            className=' hidden md:inline text-xl cursor-pointer text-gray-700'>
             ThankGod
           </p>
         </div>
@@ -166,7 +187,6 @@ const Navbar = () => {
 
 const DashboardCard = (prop) => {
   const balance = 6_000_000.0;
-
   const formattedBalance = new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency: "NGN",
@@ -177,13 +197,13 @@ const DashboardCard = (prop) => {
   const [integerPart, decimalPart] = formattedBalance.split(".");
 
   return (
-    <div className=' flex flex-col items-start justify-start relative left-[-22rem] rounded-lg p-4 w-[16vw] shadow-md'>
+    <div className=' dashboardCard flex flex-col items-start   md:relative justify-start md:mr-[66.75rem] mr-0  md:m-0 mt-5  md:w-[16vw] w-[82vw] bg-gray-50  rounded-lg p-4  shadow-md'>
       <h2 className='text-xl font-semibold mb-2'>
         <span>{prop.children}</span> Balance
       </h2>
       <p className='text-4xl font-bold text-[rgb(4,16,60)]'>
-        <span className='text-5xl'>{integerPart}</span>.
-        <span className='text-2xl'>{decimalPart}</span>
+        <span className='text-5xl'>{integerPart }</span>.
+        <span className='text-2xl'>{ decimalPart }</span>
       </p>
     </div>
   );
@@ -191,7 +211,7 @@ const DashboardCard = (prop) => {
 
 const DashBoardContents = ({ outletHandler }) => {
   return (
-    <div className=' dashboard_contents w-screen  ml-[21rem] bg-gray-50 rounded-xl   z-10   relative  flex flex-col  pl-[3rem] justify-center items-center'>
+    <div className=' dashboard_contents md:w-9/12  md:ml-[21rem] bg-white rounded-xl  p-0 z-10   relative  flex flex-col  md:pl-[3rem] justify-center items-center'>
       <DashboardCard />
       <CardContainer />
       <KYC_requestCard level2Outlet={outletHandler} />
@@ -211,7 +231,7 @@ const DashBoardContents = ({ outletHandler }) => {
 
 const CardButton = ({ label, icon }) => {
   return (
-    <div className='bg-slate-300 rounded-lg px-[3rem] w-[16rem] h-[5rem] shadow-md cursor-pointer flex items-center justify-center space-x-2'>
+    <div className='cardBTN bg-gray-50 rounded-lg px-4 md:px-[3rem] w-[11rem] md:w-[16rem] h-[60px] md:h-[5rem] shadow-md cursor-pointer flex items-center justify-center space-x-2'>
       {icon}
       <span className='text-lg font-medium'>{label}</span>
     </div>
@@ -220,14 +240,14 @@ const CardButton = ({ label, icon }) => {
 
 const CardContainer = () => {
   return (
-    <div className='relative left-[-15rem] flex-row-reverse flex gap-[1.5rem] mt-3'>
+    <div className=' cardContainer  relative left-0  justify-end ml-[4rem] md:m  flex-row-reverse flex gap-[1.5rem] mt-3 w-full  '>
       <CardButton
         label='Send Money'
-        icon={<FaMoneyBillWave size={40} color={"rgb(4,16,60)"} />}
+        icon={<FaMoneyBillWave size={35} color={"rgb(4,16,60)"} />}
       />
       <CardButton
-        label='Fund Wallet'
-        icon={<FaWallet size={40} color={"rgb(4,16,60)"} />}
+        label='Fund account'
+        icon={<FaWallet size={35} color={"rgb(4,16,60)"} />}
       />
     </div>
   );
@@ -243,13 +263,13 @@ const SearchInput = ({ Handler }) => {
   };
 
   return (
-    <div className='flex items-center my-[2rem] border w-[40vw] rounded-lg p-2'>
+    <div className='flex items-center my-[1rem] border md:my-[2rem] w-fit md:w-9/12 rounded-lg p-2'>
       <div className='flex items-center pr-2'>
         <FaSearch size={45} className='text-gray-600' />
       </div>
       <input
         type='text'
-        className='flex-grow border-none focus:ring-5 bg-transparent p-[2rem] focus:outline-none'
+        className='flex-grow border-none focus:ring-5 bg-transparent p-[0.5rem] focus:outline-none'
         placeholder='Search for transactions...'
         value={inputValue}
         onChange={handleInputChange}

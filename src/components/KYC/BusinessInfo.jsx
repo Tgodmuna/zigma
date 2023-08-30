@@ -27,17 +27,17 @@ const BusinessInfo = () => {
     setstate({ [id]: value });
   };
   return (
-    <div className=' flex p-8 rounded-lg w-full border-none m-auto  shadow-md'>
+    <div className=' flex md:flex-row flex-col p-8 rounded-lg w-full border-none md:m-auto  shadow-md'>
       <Link
         to={"/dashboard/kyc"}
-        className='flex cursor-pointer items-start relative -top-[26rem] justify-start mb-[2rem] mt-[7rem]'>
+        className='flex cursor-pointer items-start md:relative md:top-[26rem] justify-start mb-[2rem] md:mt-[7rem]'>
         <FaAngleLeft size={40} />
-        <p className='text-2xl relative -top-[115px] text-[rgb(4,16,60)] text-center text-mono capitalize'>
+        <p className='text-2xl md:relative -top-[115px] text-[rgb(4,16,60)] text-center text-mono capitalize'>
           back
         </p>
       </Link>
-      <div className='address-form  p-8 rounded-lg w-[35vw] border-none m-auto  shadow-md'>
-        <header className='text-4xl text-left text-[rgb(4,16,69)] font-bold mb-4'>
+      <div className='address-form  md:p-8 rounded-lg w-full p-4 md:w-[35vw] border-none md:m-auto  shadow-md'>
+        <header className='md:text-4xl text-3xl text-center md:text-left text-[rgb(4,16,69)] font-bold mb-4'>
           Business Verification
         </header>
         <p className='text-2xl text-left text-gray-400 font-sans '>
@@ -47,7 +47,7 @@ const BusinessInfo = () => {
           onSubmit={handleSubmit}
           action=''
           className='flex  flex-col gap-[3rem] items-start justify-start p-[2rem] '>
-          <div className=' w-full flex gap-4'>
+          <div className=' w-full md:flex-row flex-col flex gap-4'>
             <div className=' w-full flex flex-col gap-3 items-start justify-start'>
               <label
                 htmlFor='Business name'
@@ -68,7 +68,7 @@ const BusinessInfo = () => {
             <div className='flex w-full flex-col gap-3 items-start justify-start'>
               <label
                 htmlFor='Business Email'
-                className='block font-semibold text-xl text-gray-600 mb-2'>
+                className='  font-semibold text-xl text-gray-600 mb-2'>
                 Business Email
               </label>
               <input

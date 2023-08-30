@@ -27,7 +27,7 @@ const AddressForm = () => {
   };
 
   return (
-    <div className='address-form mt-[10rem] p-8 rounded-lg w-[35vw] border-none m-auto  shadow-md'>
+    <div className='address-form mt-[10rem] p-8 rounded-lg w-screen md:w-[35vw] border-none m-auto  shadow-md'>
       <header className='text-4xl text-left text-[rgb(4,16,69)] font-bold mb-4'>
         Address Verification
       </header>

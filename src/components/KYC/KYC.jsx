@@ -6,7 +6,7 @@ const KYC = () => {
 
   return (
     <>
-      <div className=' bg-transparent m-auto h-screen'>
+      <div className=' bg-transparent md:m-auto md:h-screen'>
         <div
           onClick={() => {
             navigate("/dashboard/main");
@@ -17,19 +17,19 @@ const KYC = () => {
             back
           </p>
         </div>
-        <div className='items-start justify-start flex flex-col '>
-          <h1 className='font-bold font-sans text-4xl text-[rgb(4,16,60)]b capitalize '>
+        <div className='item-center justify-center md:items-start md:justify-start  flex flex-col '>
+          <h1 className='md:font-bold font-semibold font-sans text-2xl md:text-4xl text-[rgb(4,16,60)]b capitalize '>
             verify your account
           </h1>
-          <p className='text-2xl text-slate-400 mt-[10px]'>
+          <p className='md:text-3xl text-justify text-slate-400 mt-[10px]'>
             {" "}
             once these steps are complete you will be able to submit
           </p>
         </div>
 
-        <div className='flex flex-col gap-[4rem] mt-14'>
-          <div className='flex gap-[4rem] '>
-            <div
+        <div className='flex flex-col w-full md:w-0 gap-[4rem] mt-14'>
+          <div className='flex md:flex-row w-full flex-col gap-[4rem] '>
+            <div className=" w-"
               onClick={() => {
                 navigate("/dashboard/IDVerification");
               }}
@@ -43,7 +43,9 @@ const KYC = () => {
               />
             </div>
           </div>
-          <div className='flex gap-[4rem]'>
+
+
+          <div className='flex md:flex-row flex-col  gap-[4rem]'>
             <div
               onClick={() => {
                 navigate("/dashboard/Setpin");
@@ -66,14 +68,14 @@ const KYC = () => {
 const KYCCard = ({ title, text }) => {
   return (
     <>
-      <div className='bg-gray-100 hover:bg-gray-300 rounded-2xl w-[25vw] p-6 shadow-md  flex items-center justify-between'>
-        <div className='flex flex-col gap-[1rem] '>
+      <div className='bg-gray-100 hover:bg-gray-300 rounded-2xl md:w-[25vw] md:p-6 shadow-md m-3 w-[24rem] md:py-[0rem] py-[2rem] flex items-center justify-between'>
+        <div className='flex flex-col md:mx-0 mx-3 gap-[1rem] '>
           <h1 className='text-2xl capitalize text-left font-bold text-[rgb(4,16,68)]'>
             {title}
           </h1>
           <p className='text-gray-600 text-xl text-left '>{text}</p>
         </div>
-        <div className='flex items-end justify-end text-gray-600'>
+        <div className=' md:mx-0 mx-3 flex items-end justify-end text-gray-600'>
           <FaAngleRight size={40} />
         </div>
       </div>

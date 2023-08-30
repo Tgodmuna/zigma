@@ -6,7 +6,7 @@ const Security = () => {
     return (
       <div className='m-auto'>
         <div className="m-auto" >
-          <h1 className='text-6xl mt-[3r] m-auto  font-sans font-bold text-gray-400 text-center capitalize'>
+          <h1 className=' text-3xl md:text-6xl my-[3rem] m-auto  font-sans font-bold text-gray-400 text-center capitalize'>
             security{" "}
           </h1>{" "}
         </div>
@@ -34,7 +34,7 @@ const Card = ({ header, title, path ,backPath }) => {
         onClick={() => {
           navigate(path);
         }}
-        className='cursor-pointer mb-7 mt-7 m-auto hover:bg-slate-50 bg-slate-200 my-[2rem ]  p-4 justify-between items-center w-[40vw] h-[13vh] rounded-md shadow-md flex'>
+        className='cursor-pointer mb-[3rem] md:mb-7 mt-7 md:m-auto hover:bg-slate-50 bg-slate-200 my-[2rem ]  p-4 justify-between items-center m-3 md:w-[40vw] h-[13vh] rounded-md shadow-md flex'>
         <div className='flex  items-start flex-col '>
           <h1 className='text-3xl text-blue-95 capitalize font-bold mb-2'>
             {header}

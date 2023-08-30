@@ -46,19 +46,19 @@ const IdentityVerification = () => {
   };
 
   return (
-    <div className='all flex flex-row justify-between m-auto items-center gap-5 bg-transparent rounded-lg p-6  text-center w-[50vw] h-screen'>
+    <div className='all flex flex-col md:flex-row justify-between m-auto md:items-center gap-5 bg-transparent rounded-lg p-6  text-center md:w-[50vw] md:h-screen'>
       <Link
         to={"/dashboard/kyc"}
-        className='flex cursor-pointer items-start relative -top-[26rem] justify-start mb-[2rem] mt-[7rem]'>
+        className='flex cursor-pointer md:items-start relative md:top-[26rem] md:justify-start md:mb-[2rem] md:mt-[7rem]'>
         <FaAngleLeft size={40} />
         <p className='text-2xl text-[rgb(4,16,60)] text-center text-mono capitalize'>
           back
         </p>
       </Link>
-      <div className='flex flex-col justify-between items-center gap-5  rounded-lg p-6 shadow-md text-center w-full h-[90vh]'>
+      <div className='flex flex-col justify-between items-center gap-5  rounded-lg p-6 shadow-md text-center md:w-full w-[82vw] h-screen md:h-[90vh]'>
         <div
           id='camera-holder'
-          className={`rounded-full bg-gray-200 w-[20rem] h-[20rem] mx-auto mb-4 flex items-center justify-center `}>
+          className={`rounded-full bg-gray-200 w-[10rem] h-[10rem] md:w-[20rem] md:h-[20rem] md:mx-auto mb-4 flex items-center justify-center `}>
           <img
             src={capturedImage || "Assets/Images/s.jpg"}
             alt='Avatar'
@@ -69,7 +69,7 @@ const IdentityVerification = () => {
           selfie
         </p>
 
-        <p className='text-gray-600 -mt-[6rem] w-[26rem] text-xl  mb-[3.5rem]'>
+        <p className='text-gray-600 -mt-[6rem] md:w-[26rem] text-xl text-justify w-[19rem] mr-2 mb-4 md:mb-[3.5rem]'>
           Please, have your BVN ready and stay in a well-lit place. You will
           need to position your face within the camera frame.
         </p>
@@ -85,7 +85,7 @@ const IdentityVerification = () => {
         ) : (
           <button
             onClick={handleSelfieClick}
-            className={`Btn bg-[rgb(4,16,67)] w-[25vw] -mt-[4rem] text-white py-2 px-4 rounded-lg hover:bg-blue-600`}>
+            className={`Btn bg-[rgb(4,16,67)] md:w-[25vw] -mt-[4rem] text-white py-2 px-4 rounded-lg hover:bg-blue-600`}>
             Take Selfie
           </button>
         )}

@@ -1,9 +1,11 @@
 import React from "react";
 import { FaBell, FaTimes, FaUser } from "react-icons/fa";
+import axios from "axios";
+import { useEffect } from "react";
 
-const NotificationCard = ({hideBell}) => {
+const NotificationCard = ({ hideBell }) => {
   return (
-    <div className='absolute z-30 top-[9rem] right-[-2rem] h-[30vw] bg-gray-100  m-auto rounded-md w-min  justify-between overflow-y-scroll    shadow-md flex flex-col my-3 items-start'>
+    <div className='absolute z-30 md:top-[7rem] top-[3rem] w-[20rem] left-[6rem] md:right-[-92rem] md:h-[30vw] h-[60vh] bg-gray-100  m-auto rounded-md md:w-min  justify-between overflow-y-scroll    shadow-md flex flex-col my-3 items-start'>
       <div className='flex flex-row-reverse capitalize items-end   w-full mt-3 j'>
         <div className='w-full flex gap-2 p-3 justify-end items-center mx-3  '>
           <FaTimes

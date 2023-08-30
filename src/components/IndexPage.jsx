@@ -78,7 +78,7 @@ const MobileNav = ({ hide }) => {
   const images = useContext(AllContext);
   const { logo } = images;
   return (
-    <div className=' md:hidden fixed  left-[10rem] bg-slate-200 top-[0px] z-20  flex-col flex w-[57vw] h-[30rem]   '>
+    <div className=' md:hidden fixed  left-[10rem] bg-white top-[0px] z-20  flex-col flex w-[57vw] h-[30rem]   '>
       <span className='-left-[-11rem] relative'>
         {" "}
         <FaTimes size={ 40 } onClick={ hide } />
@@ -191,7 +191,7 @@ const Section2 = () => {
 //section 3
 const Section3 = () => {
   return (
-    <section className='flex gap-[26rem] w-full hidden '>
+    <section className='md:flex gap-[26rem] w-full hidden '>
       <div className=' right bg-gray-500 rounded-2xl my-[2rem] mx-[4rem]  h-[85rem] w-[45rem]'></div>
       <div className='left w-[45vw] m-10  '>
         <StepsComponent />
