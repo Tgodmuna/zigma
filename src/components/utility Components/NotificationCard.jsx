@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { FaBell, FaTimes, FaUser } from "react-icons/fa";
+import { FaTimes, FaUser } from "react-icons/fa";
 import axios from "axios";
 import { useEffect } from "react";
 import EmptyNotification from "./EmptyNotification";
@@ -28,7 +29,7 @@ const NotificationCard = ({ hideBell }) => {
         setShowNoNotificationCard(''),
         console.log(ShowNoNotificationCard)
       );
-  },[]);
+  },[ShowNoNotificationCard]);
   return (
     // conditionally render either the notifications or an empty notification component
     <div>
