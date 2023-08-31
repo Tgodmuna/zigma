@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { AllContext } from "../../App";
-import axios from "axios";
-import { Link, useNavigate, Outlet } from "react-router-dom";
+// import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 const SignUP = () => {
   const Navigate = useNavigate();
   const store = useContext(AllContext);

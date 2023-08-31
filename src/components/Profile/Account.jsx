@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { Security } from "./Security";
+import React from "react";
+// import { Security } from "./Security";
 const Account = () => {
-  const [tab, settab] = useState("active");
-
   
   return (
     <>
