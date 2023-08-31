@@ -38,7 +38,6 @@ function App() {
             AccountNO: null,
             AccountBalance: 0
         },
-        Notification: {}
     });
     return (
         <AllContext.Provider value={state}>

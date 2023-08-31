@@ -14,7 +14,7 @@ const BusinessInfo = () => {
       .catch((err) => {
         console.log("something was wrong submiting");
         window.alert(err);
-      });
+      }); 
   };
   const [state, setstate] = useState({
     businessname: "",
