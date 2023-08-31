@@ -10,6 +10,8 @@ import {
   FaBell,
   FaBars,
   FaTimes,
+  FaChevronUp,
+  FaChevronDown,
 } from "react-icons/fa";
 
 import { AiOutlineMoneyCollect } from "react-icons/ai";
@@ -78,6 +80,12 @@ const MenuList = ({ icons, outletHandler }) => {
     setisActiveTab(tabNum);
   };
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prevState) => !prevState);
+  };
+
   return (
     <div className=' hidden  bg-gray-200  fixed -top-[0vw] md:flex flex-col md:h-full w-[17vw] gap-[2rem] '>
       <p className=' text-6xl text-center font-bold relative  -top-[0rem]  '>
@@ -118,20 +126,53 @@ const MenuList = ({ icons, outletHandler }) => {
         </li>
 
         <li
-          onClick={() => {
-            const tabnum = 3;
-            handleisActiveTab(tabnum);
-            Navigate("/dashboard/exchange");
-            outletHandler();
-          }}
-          className={`flex w-[13vw] gap-5 list-none hover:bg-gray-300 hover:px-9 focus:bg-slate-500 p-3 pl-1 pr-[2rem] mx-3 rounded-lg h-[66px ${
+          onClick={toggleDropdown}
+          className={`flex w-[13vw] gap-5 list-none hover:bg-gray-300 hover:px-9 focus:bg-slate-500 p-3 pl-1 pr-[2rem] mx-3 rounded-lg h-[66px] ${
             isActiveTab === 3 ? "bg-gray-50 border  border-slate-400" : null
           } `}>
           <span>{icons.icon3}</span>
-          <button className='text-xl text  text-blue-950 font-semibold shadow-md font-sans capitalize  '>
-            exchange{" "}
+          <button className='text-xl text text-blue-950 font-semibold shadow-md font-sans capitalize  '>
+            exchange
           </button>
+          <span className='ml-auto'>
+            {isDropdownOpen ? <FaChevronUp /> : <FaChevronDown />}
+          </span>
         </li>
+        {isDropdownOpen && (
+          <ul className='flex flex-col h-[56rem] m-auto gap-[2rem] w-full static items-center'>
+            {/* Dropdown menu options */}
+            <li
+              onClick={() => {
+                const tabnum = 4;
+                handleisActiveTab(tabnum);
+                Navigate("/dashboard/exchange/express");
+                outletHandler();
+                setIsDropdownOpen(false);
+              }}
+              className={`flex w-[13vw] gap-5 list-none hover:bg-gray-300 hover:px-9 focus:bg-slate-500 p-3 pl-1 pr-[2rem] mx-3 rounded-lg h-[66px] ${
+                isActiveTab === 4 ? "bg-gray-50 border  border-slate-400" : null
+              } `}>
+              <button className='text-xl text  text-blue-950 font-semibold shadow-md font-sans capitalize'>
+                Express
+              </button>
+            </li>
+            <li
+              onClick={() => {
+                const tabnum = 5;
+                handleisActiveTab(tabnum);
+                Navigate("/dashboard/exchange/p2p");
+                outletHandler();
+                setIsDropdownOpen(false);
+              }}
+              className={`flex w-[13vw] gap-5 list-none hover:bg-gray-300 hover:px-9 focus:bg-slate-500 p-3 pl-1 pr-[2rem] mx-3 rounded-lg h-[66px] ${
+                isActiveTab === 5 ? "bg-gray-50 border  border-slate-400" : null
+              } `}>
+              <button className='text-xl text  text-blue-950 font-semibold shadow-md font-sans capitalize'>
+                P2P
+              </button>
+            </li>
+          </ul>
+        )}
       </ul>
     </div>
   );

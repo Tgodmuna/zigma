@@ -5,15 +5,20 @@ import { useNavigate } from "react-router-dom";
 const LoginForm = () => {
   const store = useContext(AllContext);
   const { logo, LandingPageImages } = store;
-const [state, setstate] = useState({ email: "", password: "" });
+  const [state, setstate] = useState({ email: "", password: "" });
 
-const handleFormData = (e) => {
-  const { name, value } = e.target;
-  setstate((prevState) => ({
-    ...prevState, 
-    [name]: value, }));
+  const handleFormData = (e) => {
+    const { name, value } = e.target;
+    setstate((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
-  const navigate=useNavigate()
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    console.log(state);
+  };
 
   return (
     <div className='flex justify-center w-full flex-col md:flex-row'>
@@ -48,7 +53,13 @@ const handleFormData = (e) => {
         </div>
 
         {/* Login Form */}
-        <form action='' className=' w-full md:w-[60%]'>
+        <form
+          action=''
+          onSubmit={() => {
+            handleSubmit();
+            navigate("/dashboard");
+          }}
+          className=' w-full md:w-[60%]'>
           <div className='capitalize flex flex-col gap-[4rem] my-[4rem]'>
             <div className='flex justify-center items-center'>
               <input
@@ -80,7 +91,6 @@ const handleFormData = (e) => {
           </div>
 
           <button
-            onClick={navigate("/dashboard")}
             type='submit'
             className='my-[1rem] w-full hover:bg-blue-950 rounded-lg text-center bg-[rgb(4,16,62)] p-[1rem] text-2xl capitalize text-white'>
             continue

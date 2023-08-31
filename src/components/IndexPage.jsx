@@ -4,6 +4,7 @@ import StepsComponent from "./utility Components/StepDown";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import axios from "axios";
 
 const IndexPage = () => {
   const [showMobile, setshowMobile] = useState(false);
@@ -20,7 +21,9 @@ const IndexPage = () => {
           showMobile ? "hidden" : null
         } `}>
         <FaBars size={40} color='black' onClick={handleMobileNav} />
-        <h1 className='font-bold uppercase text-3xl relative left-[8rem]'>Ziga</h1>
+        <h1 className='font-bold uppercase text-3xl relative left-[8rem]'>
+          Ziga
+        </h1>
       </div>
       {showMobile && <MobileNav hide={hideMobileNav} />};
       <NavBar />
@@ -81,7 +84,7 @@ const MobileNav = ({ hide }) => {
     <div className=' md:hidden fixed  left-[10rem] bg-white top-[0px] z-20  flex-col flex w-[57vw] h-[30rem]   '>
       <span className='-left-[-11rem] relative'>
         {" "}
-        <FaTimes size={ 40 } onClick={ hide } />
+        <FaTimes size={40} onClick={hide} />
       </span>
       <img
         src={logo}
@@ -275,13 +278,13 @@ const Section5 = () => {
           <button
             className='Btn hidden md:inline text-gray-50 bg-purple-950 hover:bg-purple-900 '
             type='submit'
-            onSubmit={""}>
+            onSubmit={() => axios.post("hjshjsh", Sub)}>
             Subscribe
           </button>
           <button
             className=' text-gray-50 md:hidden w-[10rem] rounded-xl bg-purple-950 hover:bg-purple-900 '
             type='submit'
-            onSubmit={""}>
+            onSubmit={() => axios.post("hjshjsh", Sub)}>
             Subscribe
           </button>
         </div>
